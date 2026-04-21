@@ -122,3 +122,4 @@ Note: Three.js canvas and Framer Motion work fine in static export.
 ## Licence
 
 Personal portfolio — all rights reserved. Feel free to use the structure as inspiration for your own portfolio.
+My Portfolio Project
