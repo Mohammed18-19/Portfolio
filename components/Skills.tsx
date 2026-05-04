@@ -5,56 +5,56 @@ import { motion, useInView } from "framer-motion";
 
 const STACK_GROUPS = [
   {
-    category: "AI / LLM",
+    category: "AI Agents",
     accent: "#00dcff",
+    items: [
+      { name: "Agentic Workflow Design", note: "Multi-step autonomous pipelines" },
+      { name: "LLM Tool Use / Function Calling", note: "Structured agent actions" },
+      { name: "Conversational AI Agents", note: "WhatsApp-native bots" },
+      { name: "Event-Driven Agents", note: "Webhook-triggered autonomy" },
+      { name: "n8n Agentic Workflows", note: "Visual multi-agent orchestration" },
+      { name: "Prompt Engineering", note: "Chain-of-thought & few-shot" },
+    ],
+  },
+  {
+    category: "AI / LLM",
+    accent: "#f472b6",
     items: [
       { name: "Groq API", note: "Llama-3.3-70B inference" },
       { name: "Gemini API", note: "Multimodal + generation" },
-      { name: "Anthropic", note: "Claude API integration" },
+      { name: "Anthropic / Claude", note: "Claude API integration" },
       { name: "RAG Pipelines", note: "Retrieval-augmented gen" },
       { name: "pgvector", note: "Vector similarity search" },
-      { name: "Function Calling", note: "Agent tool use" },
+      { name: "Multilingual NLP", note: "Arabic, Darija, French, EN" },
     ],
   },
   {
     category: "Backend",
     accent: "#0066ff",
     items: [
-      { name: "Python", note: "Primary language" },
-      { name: "Flask", note: "Lightweight APIs & bots" },
-      { name: "Django", note: "Full-stack web apps" },
-      { name: "PostgreSQL", note: "Primary database" },
-      { name: "REST APIs", note: "Design & integration" },
-      { name: "JWT / Auth", note: "Stateless auth flows" },
+      { name: "NestJS", note: "Production API framework" },
+      { name: "Python / Flask", note: "Rapid AI backends" },
+      { name: "Next.js 15", note: "App Router frontend" },
+      { name: "Turborepo", note: "Monorepo architecture" },
+      { name: "Prisma + PostgreSQL", note: "Multi-tenant data layer" },
+      { name: "JWT / Auth", note: "Per-tenant stateless auth" },
     ],
   },
   {
-    category: "Automation",
-    accent: "#7c3aed",
-    items: [
-      { name: "n8n", note: "Visual workflow automation" },
-      { name: "Webhooks", note: "Event-driven triggers" },
-      { name: "WhatsApp Cloud API", note: "Conversational agents" },
-      { name: "Telegram Bot API", note: "Bot orchestration" },
-      { name: "Cron Jobs", note: "Scheduled pipelines" },
-      { name: "Google Sheets API", note: "Data sync & reporting" },
-    ],
-  },
-  {
-    category: "Infrastructure",
+    category: "Automation & Infra",
     accent: "#10b981",
     items: [
-      { name: "Git / GitHub", note: "Version control & OSS" },
+      { name: "WhatsApp Cloud API", note: "Webhook + message handling" },
+      { name: "n8n", note: "Visual workflow automation" },
+      { name: "Zod / Env Validation", note: "Runtime safety & schemas" },
       { name: "Railway", note: "Production deployment" },
-      { name: "Docker", note: "Containerisation (learning)" },
+      { name: "Git / GitHub", note: "Version control & OSS" },
       { name: "Linux / Bash", note: "Server ops & scripting" },
-      { name: "Nginx", note: "Reverse proxy" },
-      { name: "AWS", note: "SAA cert in progress" },
     ],
   },
 ];
 
-const LEARNING = ["Docker & Kubernetes", "System Design (advanced)", "AWS SAA", "Anthropic CCA-F", "German B1 → B2"];
+const LEARNING = ["Docker & Kubernetes", "AWS SAA", "System Design (advanced)", "Anthropic CCA-F", "German B1 → B2"];
 
 export default function Skills() {
   const ref = useRef<HTMLElement>(null);

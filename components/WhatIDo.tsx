@@ -9,8 +9,8 @@ const SERVICES = [
     title: "AI Agent Systems",
     headline: "Autonomous agents that reason, act, and deliver.",
     body:
-      "I architect multi-step AI agents with tool use, memory, and goal decomposition. From WhatsApp booking bots to API orchestrators — these systems run independently on real workloads.",
-    tags: ["LLM Orchestration", "Tool Use", "Memory", "Goal Decomposition"],
+      "I architect multi-step AI agents with tool use, memory, and goal decomposition. BookBot handles real appointments for Moroccan salons via WhatsApp — fully autonomous, zero human intervention on the booking flow.",
+    tags: ["LLM Orchestration", "Tool Use", "Function Calling", "Conversational Agents"],
     accent: "#00dcff",
   },
   {
@@ -18,8 +18,8 @@ const SERVICES = [
     title: "Backend Engineering",
     headline: "APIs and systems that power intelligent products.",
     body:
-      "Production-grade REST APIs and server-side systems built with Python, Flask, and Django. Multi-tenant architecture, PostgreSQL, authentication, background tasks, and clean system design.",
-    tags: ["Python", "Flask", "Django", "PostgreSQL", "REST APIs"],
+      "Production-grade REST APIs and server-side systems built with NestJS, Python, and Flask. Multi-tenant architecture, Prisma + PostgreSQL, Turborepo monorepos, JWT auth, webhook validation, and clean system design.",
+    tags: ["NestJS", "Python", "Flask", "PostgreSQL", "Prisma", "Turborepo"],
     accent: "#0066ff",
   },
   {
@@ -28,7 +28,7 @@ const SERVICES = [
     headline: "Workflows that replace repetitive human labour.",
     body:
       "End-to-end automation using n8n, webhooks, and custom Python scripts. API chains, scheduled jobs, notification systems, and data pipelines — designed to run without supervision.",
-    tags: ["n8n", "Webhooks", "Scheduling", "API Chains"],
+    tags: ["n8n", "Webhooks", "WhatsApp Cloud API", "Google Sheets API"],
     accent: "#7c3aed",
   },
   {
@@ -36,8 +36,8 @@ const SERVICES = [
     title: "System Design",
     headline: "Scalable architecture for growing products.",
     body:
-      "Deep interest in distributed systems, queue-based architectures, database design, and API gateway patterns. I think in systems — designing for reliability, extensibility, and scale.",
-    tags: ["Distributed Systems", "Queues", "Caching", "Scalability"],
+      "Deep interest in distributed systems, queue-based architectures, database design, and API gateway patterns. AINTORA OS is built around a shared auth layer, per-tenant AI config, and pluggable agentic modules.",
+    tags: ["Multi-tenant", "Distributed Systems", "API Gateway", "Scalability"],
     accent: "#10b981",
   },
 ];
@@ -77,18 +77,19 @@ export default function WhatIDo() {
               <span className="text-ink-400">intelligent</span> systems
             </h2>
             <p className="text-ink-400 leading-relaxed mb-10" style={{ maxWidth: 420 }}>
-              My work sits at the intersection of backend engineering and AI — building
-              the infrastructure that makes language models useful in production. Not just
-              wrappers; real agentic systems with reasoning loops, persistent memory, and
-              tool execution.
+              Founder of{" "}
+              <span className="text-ink-200">AINTORA SYSTEMS</span> — building
+              AI-native products that replace human labour for SMEs. My work sits at the
+              intersection of backend engineering and AI, turning language models into{" "}
+              <span className="text-ink-200">infrastructure that acts.</span>
             </p>
 
             {/* Mini stats */}
             <div className="grid grid-cols-3 gap-px bg-[rgba(0,220,255,0.07)]">
               {[
-                { n: "3+", l: "Live AI agents" },
-                { n: "5+", l: "Automation systems" },
-                { n: "2+", l: "SaaS products" },
+                { n: "3+", l: "LLM APIs integrated" },
+                { n: "4",  l: "Languages supported" },
+                { n: "1",  l: "Live SaaS product" },
               ].map(({ n, l }) => (
                 <div key={l} className="bg-bg-primary px-5 py-6">
                   <span className="font-mono text-3xl font-bold text-cyan-DEFAULT block leading-none">
@@ -102,7 +103,7 @@ export default function WhatIDo() {
             </div>
           </motion.div>
 
-          {/* Right — expandable service cards (moncy.dev accordion style) */}
+          {/* Right — expandable service cards */}
           <div className="flex flex-col gap-3">
             {SERVICES.map((s, i) => {
               const isOpen = openId === s.id;

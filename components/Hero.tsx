@@ -1,13 +1,23 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const NeuralOrb = dynamic(() => import("./NeuralOrb"), { ssr: false });
 
 const ROLES = ["AI Agent Builder", "Backend Engineer", "Automation Architect", "System Designer"];
 
 export default function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRoleIndex((i) => (i + 1) % ROLES.length);
+    }, 2800);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -58,7 +68,7 @@ export default function Hero() {
           >
             <span className="block w-7 h-px bg-cyan-DEFAULT" />
             <span className="font-mono text-[10px] tracking-[0.4em] text-cyan-DEFAULT uppercase">
-              AI SYSTEMS ENGINEER
+              Founder · AINTORA SYSTEMS
             </span>
           </motion.div>
 
@@ -77,24 +87,24 @@ export default function Hero() {
 
           {/* Animated role cycle */}
           <motion.div
-            className="flex items-center gap-3 mb-6"
+            className="flex items-center gap-3 mb-6 h-7 overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            <span
-              className="font-mono text-sm md:text-base tracking-widest text-ink-400"
-              style={{ fontSize: "clamp(13px,1.6vw,18px)" }}
-            >
-              {ROLES[0]}
-            </span>
-            <span className="text-ink-600">·</span>
-            <span
-              className="font-mono tracking-widest text-ink-600"
-              style={{ fontSize: "clamp(12px,1.3vw,15px)" }}
-            >
-              {ROLES[1]}
-            </span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={roleIndex}
+                className="font-mono tracking-widest text-ink-400"
+                style={{ fontSize: "clamp(13px,1.6vw,18px)" }}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              >
+                {ROLES[roleIndex]}
+              </motion.span>
+            </AnimatePresence>
           </motion.div>
 
           {/* Tagline */}
@@ -144,7 +154,7 @@ export default function Hero() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-slow shadow-[0_0_6px_#34d399]" />
             <span className="font-mono text-[10px] tracking-[0.25em] text-ink-600 uppercase">
-              Available for roles & freelance — Morocco / Remote / Germany
+              Available for Ausbildung / Roles / Freelance — Morocco · Remote · Germany
             </span>
           </motion.div>
         </div>
