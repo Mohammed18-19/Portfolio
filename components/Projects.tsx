@@ -32,9 +32,24 @@ const PRODUCTS = [
     status: "LIVE",
     statusColor: "#34d399",
   },
+  {
+    num: "03",
+    product: "InvoiceBot",
+    type: "SAAS · PAYMENT AUTOMATION",
+    title: "Automated Invoice Reminder Engine",
+    desc:
+      "SaaS platform that eliminates late payments for freelancers by sending intelligent, multilingual follow-up sequences — so you never have an awkward 'did you see my invoice?' conversation again.",
+    detail:
+      "Flask + PostgreSQL backend hosted on Render. Brevo HTTP API for reliable email delivery. Lemon Squeezy for Starter/Pro billing. Sends reminders in Arabic, French, and English — built specifically for MENA freelancers working with international clients. Live at getinvoicebot.com.",
+    tags: ["Flask", "PostgreSQL", "Brevo", "Lemon Squeezy", "Render", "Python"],
+    accent: "#34d399",
+    status: "LIVE",
+    statusColor: "#34d399",
+    url: "https://getinvoicebot.com",
+  },
 ];
 
-function ProductCard({ product, index }: { product: typeof PRODUCTS[0]; index: number }) {
+function ProductCard({ product, index }: { product: typeof PRODUCTS[0] & { url?: string }; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
@@ -151,10 +166,28 @@ function ProductCard({ product, index }: { product: typeof PRODUCTS[0]; index: n
           ))}
         </div>
 
-        {/* Expand hint */}
-        <span className="font-mono text-[9px] tracking-widest text-ink-600 uppercase">
-          {expanded ? "— less" : "+ details"}
-        </span>
+        {/* Expand hint + optional visit link */}
+        <div className="flex items-center justify-between">
+          <span className="font-mono text-[9px] tracking-widest text-ink-600 uppercase">
+            {expanded ? "— less" : "+ details"}
+          </span>
+          {"url" in product && product.url && (
+            
+              href={product.url as string}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="font-mono text-[9px] tracking-widest uppercase flex items-center gap-1 transition-colors duration-200"
+              style={{ color: product.accent }}
+              data-hover
+            >
+              Visit site
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M2.5 9.5l7-7M4 2.5h5.5V8" />
+              </svg>
+            </a>
+          )}
+        </div>
       </motion.div>
     </motion.div>
   );
@@ -242,12 +275,12 @@ export default function Projects() {
           {/* Metrics */}
           <div className="flex items-center gap-5 sm:gap-6">
             <div className="text-center">
-              <span className="font-mono text-xl font-bold text-cyan-DEFAULT block leading-none">2</span>
+              <span className="font-mono text-xl font-bold text-cyan-DEFAULT block leading-none">3</span>
               <span className="font-mono text-[9px] tracking-wide text-ink-600 mt-1 block">Products</span>
             </div>
             <div className="w-px h-8 bg-[rgba(255,255,255,0.06)]" />
             <div className="text-center">
-              <span className="font-mono text-xl font-bold text-emerald-400 block leading-none">1</span>
+              <span className="font-mono text-xl font-bold text-emerald-400 block leading-none">2</span>
               <span className="font-mono text-[9px] tracking-wide text-ink-600 mt-1 block">Live</span>
             </div>
             <div className="w-px h-8 bg-[rgba(255,255,255,0.06)]" />
@@ -264,7 +297,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Product cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {PRODUCTS.map((p, i) => (
             <ProductCard key={p.num} product={p} index={i} />
           ))}
@@ -293,7 +326,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <a
+          
             href="https://github.com/Mohammed18-19"
             target="_blank"
             rel="noopener noreferrer"
