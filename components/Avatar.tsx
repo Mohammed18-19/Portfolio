@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Avatar() {
   const [showBubble, setShowBubble] = useState(false);
@@ -41,12 +42,17 @@ export default function Avatar() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4, delay: 1.8 }}
-        className="w-11 h-11 rounded-full border border-cyan-border bg-bg-secondary flex items-center justify-center flex-shrink-0"
-        style={{ boxShadow: "0 0 16px rgba(0,220,255,0.15)" }}
+        className="relative w-12 h-12 rounded-full overflow-hidden border border-cyan-border flex-shrink-0"
+        style={{ boxShadow: "0 0 16px rgba(0,220,255,0.2)" }}
       >
-        <span className="font-mono text-[11px] tracking-wide text-cyan-DEFAULT font-semibold">
-          MA
-        </span>
+        <Image
+          src="/avatar-mohammed.jpg"
+          alt="Mohammed Aintomar"
+          fill
+          sizes="48px"
+          className="object-cover"
+          priority
+        />
       </motion.div>
     </div>
   );
