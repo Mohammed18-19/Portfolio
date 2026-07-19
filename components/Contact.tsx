@@ -33,7 +33,7 @@ export default function Contact() {
             animate={inView ? { opacity: 1 } : {}}
           >
             <span className="w-5 h-px bg-cyan-DEFAULT" />
-            Get in Touch
+            Kontakt
             <span className="w-5 h-px bg-cyan-DEFAULT" />
           </motion.p>
 
@@ -44,9 +44,9 @@ export default function Contact() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
-            Let's build something
+            Lassen Sie uns
             <br />
-            <span className="text-cyan-DEFAULT cyan-text-glow">agentic</span> together
+            <span className="text-cyan-DEFAULT cyan-text-glow">sprechen</span>
           </motion.h2>
 
           <motion.p
@@ -55,8 +55,9 @@ export default function Contact() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.25 }}
           >
-            Open to AI engineering roles, Ausbildung programs in Germany, freelance
-            automation projects, and founding-team opportunities at ambitious startups.
+            Ich bewerbe mich aktuell für Ausbildungsplätze zum Fachinformatiker
+            Anwendungsentwicklung in ganz Deutschland, mit Start 2026. Bis dahin bin
+            ich auch offen für Freelance-Projekte und Junior-Backend-Positionen.
           </motion.p>
 
           {/* Primary CTA */}
@@ -67,12 +68,28 @@ export default function Contact() {
             transition={{ delay: 0.35 }}
           >
             <a
-              href="mailto:contact@aintomar.dev"
+              href="mailto:aintomar.mohammed200@gmail.com"
               className="group relative overflow-hidden font-mono text-[10px] tracking-[0.35em] uppercase px-10 py-5 border border-cyan-DEFAULT text-cyan-DEFAULT hover:text-bg-primary transition-colors duration-300 w-full sm:w-auto text-center"
               data-hover
             >
-              <span className="relative z-10">contact@aintomar.dev</span>
+              <span className="relative z-10">aintomar.mohammed200@gmail.com</span>
               <span className="absolute inset-0 bg-cyan-DEFAULT -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+            </a>
+
+            <a
+              href="/lebenslauf-mohammed-aintomar.pdf"
+              className="font-mono text-[10px] tracking-[0.35em] uppercase px-10 py-5 border border-ink-600 text-ink-400 hover:border-cyan-border hover:text-ink-200 transition-all duration-300 w-full sm:w-auto text-center"
+              data-hover
+            >
+              Lebenslauf herunterladen
+            </a>
+
+            <a
+              href="/anschreiben-mohammed-aintomar.pdf"
+              className="font-mono text-[10px] tracking-[0.35em] uppercase px-10 py-5 border border-ink-600 text-ink-400 hover:border-cyan-border hover:text-ink-200 transition-all duration-300 w-full sm:w-auto text-center"
+              data-hover
+            >
+              Anschreiben
             </a>
 
             <a
@@ -82,21 +99,22 @@ export default function Contact() {
               className="font-mono text-[10px] tracking-[0.35em] uppercase px-10 py-5 border border-ink-600 text-ink-400 hover:border-cyan-border hover:text-ink-200 transition-all duration-300 w-full sm:w-auto text-center"
               data-hover
             >
-              GitHub Profile
+              GitHub-Profil
             </a>
           </motion.div>
 
           {/* Info row */}
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[rgba(0,220,255,0.06)]"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(0,220,255,0.06)]"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.5 }}
           >
             {[
-              { label: "Location", value: "Kénitra, Morocco" },
-              { label: "Target Market", value: "Morocco · Germany · Remote" },
-              { label: "Response Time", value: "< 24 hours" },
+              { label: "Standort", value: "Kénitra, Marokko" },
+              { label: "Telefon", value: "+212 610 412 080" },
+              { label: "Ziel", value: "Ausbildung in Deutschland, 2026" },
+              { label: "Deutschniveau", value: "B1 (TELC, Juni 2026)" },
             ].map(({ label, value }) => (
               <div key={label} className="bg-bg-primary py-6 px-5">
                 <span className="font-mono text-[9px] tracking-[0.3em] text-ink-600 uppercase block mb-1">
@@ -105,6 +123,36 @@ export default function Contact() {
                 <span className="font-mono text-xs text-ink-200">{value}</span>
               </div>
             ))}
+          </motion.div>
+
+          {/* Certificates */}
+          <motion.div
+            className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-10"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.6 }}
+          >
+            <span className="font-mono text-[9px] tracking-[0.3em] text-ink-600 uppercase">
+              Zertifikate:
+            </span>
+            <a
+              href="/telc-b1-zertifikat-mohammed-aintomar.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] tracking-wide text-ink-400 hover:text-cyan-DEFAULT underline underline-offset-4 decoration-ink-600 hover:decoration-cyan-DEFAULT transition-colors"
+              data-hover
+            >
+              telc Deutsch B1 →
+            </a>
+            <a
+              href="/abiturzeugnis-mohammed-aintomar.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] tracking-wide text-ink-400 hover:text-cyan-DEFAULT underline underline-offset-4 decoration-ink-600 hover:decoration-cyan-DEFAULT transition-colors"
+              data-hover
+            >
+              Abiturzeugnis →
+            </a>
           </motion.div>
         </div>
       </div>

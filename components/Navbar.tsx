@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Systems", href: "#systems" },
-  { label: "Projects", href: "#projects" },
-  { label: "Stack", href: "#stack" },
-  { label: "Contact", href: "#contact" },
+  { label: "Über mich", href: "#about" },
+  { label: "Warum Deutschland", href: "#why-germany" },
+  { label: "Projekte", href: "#projects" },
+  { label: "Skills", href: "#stack" },
+  { label: "Kontakt", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -41,7 +41,7 @@ export default function Navbar() {
       >
         <div className="max-w-screen-xl mx-auto px-8 md:px-12 h-16 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group" aria-label="Home">
+          <a href="#" className="flex items-center gap-3 group" aria-label="Startseite">
             <span className="w-2 h-2 rounded-full bg-cyan-DEFAULT animate-pulse-slow" />
             <span className="font-mono text-xs tracking-[0.3em] text-ink-200 uppercase group-hover:text-cyan-DEFAULT transition-colors duration-200">
               M.AINTOMAR
@@ -49,7 +49,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-10" aria-label="Primary">
+          <nav className="hidden md:flex items-center gap-10" aria-label="Hauptnavigation">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.href}
@@ -64,18 +64,18 @@ export default function Navbar() {
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-4">
             <a
-              href="mailto:contact@aintomar.dev"
+              href="/lebenslauf-mohammed-aintomar.pdf"
               className="hidden md:flex items-center gap-2 font-mono text-[10px] tracking-[0.25em] text-cyan-DEFAULT uppercase border border-cyan-border px-5 py-2.5 hover:bg-cyan-dim transition-all duration-200"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-DEFAULT animate-pulse-slow" />
-              Available
+              Lebenslauf
             </a>
 
             {/* Mobile hamburger */}
             <button
               className="md:hidden flex flex-col gap-1.5 p-2"
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
+              aria-label="Menü öffnen/schließen"
             >
               <span
                 className="block w-6 h-px bg-cyan-DEFAULT transition-transform duration-300"
@@ -117,13 +117,13 @@ export default function Navbar() {
               </motion.button>
             ))}
             <motion.a
-              href="mailto:contact@aintomar.dev"
+              href="mailto:aintomar.mohammed200@gmail.com"
               className="mt-4 font-mono text-xs tracking-widest text-cyan-DEFAULT border border-cyan-border px-8 py-3"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              contact@aintomar.dev
+              aintomar.mohammed200@gmail.com
             </motion.a>
           </motion.div>
         )}

@@ -5,14 +5,14 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 
 /* ─── Node / Edge definitions ─────────────────────────────────── */
 const NODES = [
-  { id: "user",   x: 60,   y: 190, w: 88,  h: 30, label: "USER INPUT",        color: "#64748b", glow: false },
+  { id: "user",   x: 60,   y: 190, w: 88,  h: 30, label: "NUTZEREINGABE",        color: "#64748b", glow: false },
   { id: "llm",    x: 230,  y: 190, w: 108, h: 30, label: "LLM ORCHESTRATOR",  color: "#00dcff", glow: true  },
   { id: "mem",    x: 430,  y: 60,  w: 88,  h: 28, label: "MEMORY STORE",      color: "#a78bfa", glow: false },
   { id: "tools",  x: 430,  y: 120, w: 88,  h: 28, label: "TOOL REGISTRY",     color: "#34d399", glow: false },
   { id: "api",    x: 430,  y: 180, w: 88,  h: 28, label: "API GATEWAY",       color: "#f59e0b", glow: false },
   { id: "queue",  x: 430,  y: 240, w: 88,  h: 28, label: "TASK QUEUE",        color: "#f43f5e", glow: false },
   { id: "ext",    x: 430,  y: 300, w: 88,  h: 28, label: "EXTERNAL APIS",     color: "#0ea5e9", glow: false },
-  { id: "out",    x: 610,  y: 190, w: 88,  h: 30, label: "RESPONSE",          color: "#64748b", glow: false },
+  { id: "out",    x: 610,  y: 190, w: 88,  h: 30, label: "ANTWORT",          color: "#64748b", glow: false },
 ];
 
 const EDGES = [
@@ -162,21 +162,13 @@ function Terminal({ active }: { active: boolean }) {
         </AnimatePresence>
         {lines.length === 0 && (
           <p className="text-ink-600 text-[11px]">
-            Waiting for input<span className="animate-blink ml-0.5">▋</span>
+            Warte auf Eingabe<span className="animate-blink ml-0.5">▋</span>
           </p>
         )}
       </div>
     </div>
   );
 }
-
-/* ─── Live metrics ticker ──────────────────────────────────────── */
-const METRICS = [
-  { label: "Avg Response", value: "1.8s", sub: "WhatsApp round-trip" },
-  { label: "Tool Calls / Run", value: "3.4", sub: "Avg per agent session" },
-  { label: "Uptime", value: "99.7%", sub: "BookBot — 30 days" },
-  { label: "Messages Handled", value: "1.2k+", sub: "Production volume" },
-];
 
 /* ─── Main section ─────────────────────────────────────────────── */
 export default function AgentArchitecture() {
@@ -219,7 +211,7 @@ export default function AgentArchitecture() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
           >
-            Agent Architecture
+            Wie ich über Systeme nachdenke
           </motion.p>
           <motion.h2
             className="font-sans font-bold text-ink-100 leading-tight mb-4"
@@ -228,9 +220,9 @@ export default function AgentArchitecture() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            How my agents
+            Wie eine Anfrage durch
             <br />
-            <span className="text-ink-400">think and act</span>
+            <span className="text-ink-400">mein System läuft</span>
           </motion.h2>
           <motion.p
             className="text-ink-400 text-sm leading-relaxed"
@@ -238,8 +230,10 @@ export default function AgentArchitecture() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.2 }}
           >
-            Every system I build follows a reasoning loop: observe → plan → act → store.
-            The diagram below reflects the live architecture powering BookBot and AINTORA OS.
+            Das ist das gleiche Muster — beobachten → planen → handeln → speichern —
+            hinter dem WhatsApp-Buchungsassistenten, den ich für AINTORA OS baue,
+            hier vereinfacht dargestellt, um zu zeigen, wie ich ein System in klare,
+            testbare Schritte zerlege.
           </motion.p>
         </div>
 
@@ -381,44 +375,36 @@ export default function AgentArchitecture() {
           </motion.div>
         </div>
 
-        {/* ── Metrics row ── */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(0,220,255,0.07)]"
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+        {/* ── Note ── */}
+        <motion.p
+          className="text-ink-600 text-xs font-mono tracking-wide text-center"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5 }}
         >
-          {METRICS.map(({ label, value, sub }) => (
-            <div key={label} className="bg-bg-primary px-6 py-7">
-              <span className="font-mono text-3xl md:text-4xl font-bold text-cyan-DEFAULT block leading-none mb-1"
-                style={{ textShadow: "0 0 20px rgba(0,220,255,0.3)" }}>
-                {value}
-              </span>
-              <span className="font-mono text-[10px] tracking-wide text-ink-200 block mb-1">{label}</span>
-              <span className="font-mono text-[9px] text-ink-600">{sub}</span>
-            </div>
-          ))}
-        </motion.div>
+          Hinweis: Das Diagramm und der Terminal-Log oben sind eine vereinfachte
+          Illustration des Musters, nicht echte Produktionsdaten.
+        </motion.p>
 
         {/* ── Agent types list ── */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             {
               icon: "⬡",
-              title: "Conversational Booking Agents",
-              body: "WhatsApp & Telegram agents that complete multi-turn booking flows, send confirmations, handle rescheduling, and sync to Google Sheets — autonomously.",
+              title: "Konversations-Buchungsagenten",
+              body: "WhatsApp-Agenten, die mehrstufige Buchungsabläufe durchführen, Bestätigungen senden und Umbuchungen handhaben — das Muster hinter AINTORA OS.",
               color: "#00dcff",
             },
             {
               icon: "⬡",
-              title: "API Orchestration Systems",
-              body: "Backend agents that fan out to 3–6 external APIs in parallel, merge results, apply LLM reasoning, and return a single coherent response.",
+              title: "API-Orchestrierung",
+              body: "Backend-Logik, die mehrere externe APIs kombiniert, Ergebnisse zusammenführt und daraus eine einzige, sinnvolle Antwort erzeugt.",
               color: "#a78bfa",
             },
             {
               icon: "⬡",
-              title: "Document Intelligence Pipelines",
-              body: "Agents that ingest PDFs, forms, and job descriptions; extract structured data; run classification; and generate tailored outputs in target formats.",
+              title: "Dokumentenverarbeitung",
+              body: "Erste Experimente mit dem Extrahieren strukturierter Daten aus PDFs und Formularen — ein Bereich, den ich noch weiter ausbaue.",
               color: "#34d399",
             },
           ].map(({ icon, title, body, color }, i) => (

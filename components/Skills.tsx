@@ -5,56 +5,49 @@ import { motion, useInView } from "framer-motion";
 
 const STACK_GROUPS = [
   {
-    category: "AI Agents",
+    category: "Sprachen",
     accent: "#00dcff",
     items: [
-      { name: "Agentic Workflow Design", note: "Multi-step autonomous pipelines" },
-      { name: "LLM Tool Use / Function Calling", note: "Structured agent actions" },
-      { name: "Conversational AI Agents", note: "WhatsApp-native bots" },
-      { name: "Event-Driven Agents", note: "Webhook-triggered autonomy" },
-      { name: "n8n Agentic Workflows", note: "Visual multi-agent orchestration" },
-      { name: "Prompt Engineering", note: "Chain-of-thought & few-shot" },
+      { name: "Python", note: "Hauptsprache für Backend-Projekte" },
+      { name: "JavaScript", note: "Frontend & einfache Skripte" },
+      { name: "SQL", note: "Abfragen & Schema-Design" },
+      { name: "HTML / CSS", note: "Grundlagen" },
     ],
   },
   {
-    category: "AI / LLM",
-    accent: "#f472b6",
-    items: [
-      { name: "Groq API", note: "Llama-3.3-70B inference" },
-      { name: "Gemini API", note: "Multimodal + generation" },
-      { name: "Anthropic / Claude", note: "Claude API integration" },
-      { name: "RAG Pipelines", note: "Retrieval-augmented gen" },
-      { name: "pgvector", note: "Vector similarity search" },
-      { name: "Multilingual NLP", note: "Arabic, Darija, French, EN" },
-    ],
-  },
-  {
-    category: "Backend",
+    category: "Backend & APIs",
     accent: "#0066ff",
     items: [
-      { name: "NestJS", note: "Production API framework" },
-      { name: "Python / Flask", note: "Rapid AI backends" },
-      { name: "Next.js 15", note: "App Router frontend" },
-      { name: "Turborepo", note: "Monorepo architecture" },
-      { name: "Prisma + PostgreSQL", note: "Multi-tenant data layer" },
-      { name: "JWT / Auth", note: "Per-tenant stateless auth" },
+      { name: "Flask", note: "InvoiceBot-Backend in Produktion" },
+      { name: "Django", note: "Grundlagen" },
+      { name: "REST-API-Design", note: "JSON, API-Integration" },
+      { name: "OOP & Clean Code", note: "Sauberer, wartbarer Code" },
     ],
   },
   {
-    category: "Automation & Infra",
+    category: "Datenbanken & KI",
+    accent: "#f472b6",
+    items: [
+      { name: "PostgreSQL", note: "Relationales Schema-Design" },
+      { name: "SQLite", note: "Lokale Entwicklung" },
+      { name: "APScheduler", note: "Cron-basierte Hintergrundjobs" },
+      { name: "LLM-APIs", note: "OpenAI, Groq, Claude" },
+    ],
+  },
+  {
+    category: "Tools & Deployment",
     accent: "#10b981",
     items: [
-      { name: "WhatsApp Cloud API", note: "Webhook + message handling" },
-      { name: "n8n", note: "Visual workflow automation" },
-      { name: "Zod / Env Validation", note: "Runtime safety & schemas" },
-      { name: "Railway", note: "Production deployment" },
-      { name: "Git / GitHub", note: "Version control & OSS" },
-      { name: "Linux / Bash", note: "Server ops & scripting" },
+      { name: "Git / GitHub", note: "Versionskontrolle" },
+      { name: "Linux / Bash", note: "Server-Betrieb & Skripte" },
+      { name: "Render / Vercel", note: "Deployment" },
+      { name: "Docker", note: "Grundlagen" },
+      { name: "n8n", note: "Workflow-Automatisierung" },
     ],
   },
 ];
 
-const LEARNING = ["Docker & Kubernetes", "AWS SAA", "System Design (advanced)", "Anthropic CCA-F", "German B1 → B2"];
+const LEARNING = ["Docker vertiefen", "System Design", "Django vertiefen", "Deutsch B1 → B2"];
 
 export default function Skills() {
   const ref = useRef<HTMLElement>(null);
@@ -86,9 +79,9 @@ export default function Skills() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          Tools that power
+          Werkzeuge, mit denen
           <br />
-          <span className="text-ink-400">production AI systems</span>
+          <span className="text-ink-400">ich wirklich arbeite</span>
         </motion.h2>
 
         {/* Stack grid */}
@@ -132,7 +125,7 @@ export default function Skills() {
           transition={{ delay: 0.5 }}
         >
           <span className="font-mono text-[9px] tracking-[0.35em] text-violet-400 uppercase flex-shrink-0">
-            Currently Deep-diving
+            Aktuell am Vertiefen
           </span>
           <div className="flex flex-wrap gap-3">
             {LEARNING.map((item) => (

@@ -6,38 +6,38 @@ import { motion, useInView } from "framer-motion";
 const SERVICES = [
   {
     id: "01",
-    title: "AI Agent Systems",
-    headline: "Autonomous agents that reason, act, and deliver.",
+    title: "KI-Agentensysteme",
+    headline: "Mehrstufige Automatisierung, die echte Aufgaben übernimmt.",
     body:
-      "I architect multi-step AI agents with tool use, memory, and goal decomposition. BookBot handles real appointments for Moroccan salons via WhatsApp — fully autonomous, zero human intervention on the booking flow.",
-    tags: ["LLM Orchestration", "Tool Use", "Function Calling", "Conversational Agents"],
+      "Ich entwickle KI-Workflows mit Tool-Nutzung und Kontext-Management. AINTORA OS ist ein WhatsApp-Buchungsassistent, den ich aktuell für einen echten Friseursalon in Marokko baue — ein laufendes Projekt, kein fertiges Produkt.",
+    tags: ["LLM-Orchestrierung", "Tool Use", "Function Calling", "Konversations-KI"],
     accent: "#00dcff",
   },
   {
     id: "02",
-    title: "Backend Engineering",
-    headline: "APIs and systems that power intelligent products.",
+    title: "Backend-Entwicklung",
+    headline: "APIs und Systeme, die zuverlässig laufen.",
     body:
-      "Production-grade REST APIs and server-side systems built with NestJS, Python, and Flask. Multi-tenant architecture, Prisma + PostgreSQL, Turborepo monorepos, JWT auth, webhook validation, and clean system design.",
+      "REST-APIs und Server-Systeme mit NestJS, Python und Flask. Multi-Tenant-Architektur, Prisma + PostgreSQL, Turborepo-Monorepos, JWT-Auth, Webhook-Validierung und sauberes Systemdesign.",
     tags: ["NestJS", "Python", "Flask", "PostgreSQL", "Prisma", "Turborepo"],
     accent: "#0066ff",
   },
   {
     id: "03",
-    title: "Automation Pipelines",
-    headline: "Workflows that replace repetitive human labour.",
+    title: "Automatisierung",
+    headline: "Workflows, die wiederkehrende Aufgaben übernehmen.",
     body:
-      "End-to-end automation using n8n, webhooks, and custom Python scripts. API chains, scheduled jobs, notification systems, and data pipelines — designed to run without supervision.",
+      "End-to-End-Automatisierung mit n8n, Webhooks und eigenen Python-Skripten. API-Ketten, geplante Jobs, Benachrichtigungssysteme und Datenpipelines.",
     tags: ["n8n", "Webhooks", "WhatsApp Cloud API", "Google Sheets API"],
     accent: "#7c3aed",
   },
   {
     id: "04",
-    title: "System Design",
-    headline: "Scalable architecture for growing products.",
+    title: "Systemdesign",
+    headline: "Architektur, die mit einem Projekt mitwachsen kann.",
     body:
-      "Deep interest in distributed systems, queue-based architectures, database design, and API gateway patterns. AINTORA OS is built around a shared auth layer, per-tenant AI config, and pluggable agentic modules.",
-    tags: ["Multi-tenant", "Distributed Systems", "API Gateway", "Scalability"],
+      "Ich interessiere mich für verteilte Systeme, Queue-basierte Architekturen und Datenbankdesign. AINTORA OS ist um eine gemeinsame Auth-Schicht und eine Konfiguration pro Kunde herum aufgebaut.",
+    tags: ["Multi-Tenant", "Verteilte Systeme", "API Gateway", "Skalierbarkeit"],
     accent: "#10b981",
   },
 ];
@@ -66,30 +66,30 @@ export default function WhatIDo() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="font-mono text-[10px] tracking-[0.4em] text-cyan-DEFAULT uppercase mb-4 heading-line">
-              What I Do
+              Was ich mache
             </p>
             <h2
               className="font-sans font-bold leading-tight text-ink-100 mb-6"
               style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
             >
-              Engineering
+              Systeme bauen,
               <br />
-              <span className="text-ink-400">intelligent</span> systems
+              <span className="text-ink-400">die wirklich</span> funktionieren
             </h2>
             <p className="text-ink-400 leading-relaxed mb-10" style={{ maxWidth: 420 }}>
-              Founder of{" "}
-              <span className="text-ink-200">AINTORA SYSTEMS</span> — building
-              AI-native products that replace human labour for SMEs. My work sits at the
-              intersection of backend engineering and AI, turning language models into{" "}
-              <span className="text-ink-200">infrastructure that acts.</span>
+              Ich baue <span className="text-ink-200">AINTORA SYSTEMS</span> auf —
+              kleine, praktische Software für kleine Unternehmen: einen Buchungsbot
+              für einen lokalen Salon, ein Zahlungserinnerungs-Tool für Freelancer.
+              Mein Fokus liegt auf Backend-Entwicklung, KI ist dabei ein Werkzeug
+              unter mehreren, nicht das ganze Konzept.
             </p>
 
             {/* Mini stats */}
             <div className="grid grid-cols-3 gap-px bg-[rgba(0,220,255,0.07)]">
               {[
-                { n: "3+", l: "LLM APIs integrated" },
-                { n: "4",  l: "Languages supported" },
-                { n: "1",  l: "Live SaaS product" },
+                { n: "3", l: "LLM-APIs verwendet" },
+                { n: "4",  l: "Sprachen unterstützt" },
+                { n: "1",  l: "Live-SaaS-Produkt" },
               ].map(({ n, l }) => (
                 <div key={l} className="bg-bg-primary px-5 py-6">
                   <span className="font-mono text-3xl font-bold text-cyan-DEFAULT block leading-none">

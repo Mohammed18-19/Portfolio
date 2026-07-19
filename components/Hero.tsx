@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const NeuralOrb = dynamic(() => import("./NeuralOrb"), { ssr: false });
 
-const ROLES = ["AI Agent Builder", "Backend Engineer", "Automation Architect", "System Designer"];
+const ROLES = ["Backend-Entwickler", "Software-Entwickler", "Ausbildungsplatz gesucht — 2026", "Baue AINTORA SYSTEMS auf"];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -68,7 +68,7 @@ export default function Hero() {
           >
             <span className="block w-7 h-px bg-cyan-DEFAULT" />
             <span className="font-mono text-[10px] tracking-[0.4em] text-cyan-DEFAULT uppercase">
-              Founder · AINTORA SYSTEMS
+              Kenitra, Marokko · Baue AINTORA SYSTEMS auf
             </span>
           </motion.div>
 
@@ -115,11 +115,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
           >
-            I design and ship{" "}
-            <span className="text-ink-200">autonomous AI agents</span>,{" "}
-            intelligent backend APIs, and production automation systems — turning language
-            models into{" "}
-            <span className="text-ink-200">infrastructure that acts.</span>
+            Ich bin Autodidakt aus Marokko und entwickle{" "}
+            <span className="text-ink-200">echte, funktionierende Produkte</span> — ein
+            SaaS-Tool im Live-Betrieb, WhatsApp-Buchungsassistenten, Backend-APIs. Jetzt
+            suche ich eine Ausbildung zum Fachinformatiker Anwendungsentwicklung in
+            Deutschland, um aus dem, was ich mir selbst beigebracht habe,{" "}
+            <span className="text-ink-200">eine solide fachliche Grundlage</span> zu machen.
           </motion.p>
 
           {/* CTAs */}
@@ -129,19 +130,28 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85 }}
           >
-            <button
-              onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
-              className="group relative overflow-hidden font-mono text-[10px] tracking-[0.3em] uppercase px-7 py-4 border border-cyan-DEFAULT text-cyan-DEFAULT transition-all duration-300 hover:text-bg-primary"
+            <a
+              href="/lebenslauf-mohammed-aintomar.pdf"
+              className="group relative overflow-hidden font-mono text-[10px] tracking-[0.3em] uppercase px-7 py-4 border border-cyan-DEFAULT text-cyan-DEFAULT transition-all duration-300 hover:text-bg-primary text-center"
+              data-hover
             >
-              <span className="relative z-10">View Projects</span>
+              <span className="relative z-10">Lebenslauf herunterladen</span>
               <span className="absolute inset-0 bg-cyan-DEFAULT translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" />
-            </button>
+            </a>
+
+            <a
+              href="/anschreiben-mohammed-aintomar.pdf"
+              className="font-mono text-[10px] tracking-[0.3em] uppercase px-7 py-4 border border-ink-600 text-ink-400 hover:border-cyan-border hover:text-ink-200 transition-all duration-300 text-center"
+              data-hover
+            >
+              Anschreiben
+            </a>
 
             <button
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
               className="font-mono text-[10px] tracking-[0.3em] uppercase px-7 py-4 border border-ink-600 text-ink-400 hover:border-cyan-border hover:text-ink-200 transition-all duration-300"
             >
-              Let's Talk
+              Projekte ansehen
             </button>
           </motion.div>
 
@@ -154,7 +164,7 @@ export default function Hero() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-slow shadow-[0_0_6px_#34d399]" />
             <span className="font-mono text-[10px] tracking-[0.25em] text-ink-600 uppercase">
-              Available for Ausbildung / Roles / Freelance — Morocco · Remote · Germany
+              Bewerbung für Ausbildung Anwendungsentwicklung — Start 2026 · Deutsch B1 (TELC)
             </span>
           </motion.div>
         </div>
@@ -168,7 +178,7 @@ export default function Hero() {
         transition={{ delay: 1.5 }}
         aria-hidden
       >
-        <span className="font-mono text-[9px] tracking-[0.4em] text-ink-600 uppercase">Scroll</span>
+        <span className="font-mono text-[9px] tracking-[0.4em] text-ink-600 uppercase">Scrollen</span>
         <span className="block w-px h-10 bg-gradient-to-b from-ink-600 to-transparent" />
       </motion.div>
     </section>

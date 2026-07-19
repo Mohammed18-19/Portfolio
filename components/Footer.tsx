@@ -1,9 +1,9 @@
 "use client";
 
 const MARQUEE_ITEMS = [
-  "AI ENGINEER", "·", "PYTHON", "·", "FLASK", "·", "DJANGO", "·",
-  "AI AGENTS", "·", "AUTOMATION", "·", "SYSTEM DESIGN", "·",
-  "POSTGRESQL", "·", "AINTORA SYSTEMS", "·",
+  "BACKEND-ENTWICKLER", "·", "PYTHON", "·", "FLASK", "·", "DJANGO", "·",
+  "POSTGRESQL", "·", "AUTOMATISIERUNG", "·", "LINUX", "·",
+  "REST API", "·", "AINTORA SYSTEMS", "·",
 ];
 
 export default function Footer() {
@@ -29,10 +29,10 @@ export default function Footer() {
         </span>
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-slow" style={{ boxShadow: "0 0 5px #34d399" }} />
-          <span className="font-mono text-[9px] tracking-[0.25em] text-ink-600 uppercase">Systems Operational</span>
+          <span className="font-mono text-[9px] tracking-[0.25em] text-ink-600 uppercase">Ausbildung gesucht — Start 2026</span>
         </div>
         <span className="font-mono text-[9px] tracking-[0.25em] text-ink-600 uppercase">
-          Morocco → Germany → World
+          Marokko → Deutschland
         </span>
       </div>
     </footer>

@@ -6,50 +6,36 @@ import { motion, useInView } from "framer-motion";
 const PRODUCTS = [
   {
     num: "01",
-    product: "AINTORA OS",
-    type: "WHATSAPP AI PLATFORM",
-    title: "AI Booking Engine for SMEs",
+    product: "InvoiceBot",
+    type: "LIVE SAAS-PRODUKT",
+    title: "Automatische Zahlungserinnerungen für Freelancer",
     desc:
-      "Autonomous WhatsApp agent that handles appointments, confirmations, cancel/reschedule flows, and client management for salons and clinics — zero human intervention on the booking loop.",
+      "Freelancer verlieren Geld, weil sie unbezahlten Rechnungen hinterherlaufen müssen. InvoiceBot automatisiert den gesamten Erinnerungsprozess — von der Registrierung bis zum automatischen E-Mail-Versand — ohne manuelle Eingriffe.",
     detail:
-      "Production-grade Turborepo monorepo: NestJS backend with webhook signature validation, message deduplication, and Zod env validation. Next.js 15 App Router frontend. Prisma + PostgreSQL multi-tenant data layer. JWT per-tenant auth. Multilingual: Arabic, Darija, French, English.",
-    tags: ["NestJS", "Next.js 15", "Turborepo", "Prisma", "Groq Llama-3.3", "WhatsApp Cloud API"],
+      "Problem: Freelancer vergessen entweder, säumige Zahlungen anzumahnen, oder verbringen Zeit damit, die eigentlich der Arbeit mit Kunden gehören sollte. Umsetzung: Flask-Backend in Python mit einem relationalen PostgreSQL-Schema für Nutzer, Rechnungsstatus und konfigurierbare Erinnerungszyklen; APScheduler für die geplanten Hintergrundjobs; Brevo SMTP-API für den E-Mail-Versand; Lemon Squeezy für Abonnements und Zahlungsabwicklung. Deployed auf einem Linux-Server bei Render. Was ich gelernt habe: Für echte, zahlende Nutzer zu bauen und selbst zu betreiben brachte Randfälle zum Vorschein — Zeitzonen, doppelte Versendungen, Fehleranalyse im Produktionsbetrieb —, die mir kein Tutorial-Projekt je beigebracht hätte.",
+    tags: ["Python", "Flask", "PostgreSQL", "APScheduler", "REST API", "Render"],
     accent: "#00dcff",
-    status: "BUILDING",
-    statusColor: "#f59e0b",
+    status: "LIVE",
+    statusColor: "#34d399",
+    link: "https://getinvoicebot.com/",
   },
   {
     num: "02",
-    product: "AINTORA Career Intelligence",
-    type: "AI CAREER TOOL",
-    title: "Ausbildung Opportunity Hunter",
+    product: "AINTORA OS",
+    type: "WHATSAPP-BUCHUNGSASSISTENT",
+    title: "Terminbuchung für lokale Salons",
     desc:
-      "Intelligent job-hunting app that scans German platforms for IT Ausbildung listings, filters by relevance, and surfaces the best opportunities — built to solve a real problem I face personally.",
+      "Ein WhatsApp-Bot, mit dem Salon-Kunden Termine buchen, bestätigen und umbuchen können — auf Arabisch, Darija, Französisch oder Englisch. Gebaut für einen echten Salon-Kunden, kein Demo-Projekt.",
     detail:
-      "React + Vite frontend deployed on Vercel. Aggregates live listings across German job platforms, ranks by fit for Fachinformatiker tracks (FIAE, SI, DPA), and provides direct application links. Solves the real friction of finding Ausbildung as a non-EU applicant.",
-    tags: ["React", "Vite", "Vercel", "German Job Market", "IT Ausbildung"],
+      "Problem: Kleine Salons in Marokko verlieren Buchungen durch verpasste Anrufe und manuelle Terminplanung. Meine Entscheidungen: NestJS-Backend in einem Turborepo-Monorepo, mit Webhook-Signaturprüfung und Nachrichtendeduplizierung, da WhatsApp Events erneut zustellen kann; Prisma + PostgreSQL für eine Multi-Tenant-Datenschicht, damit die Daten jedes Salons getrennt bleiben. Was ich gelernt habe: Echte Buchungen eines laufenden Kunden zu betreuen hat mir mehr über Zuverlässigkeit und Randfälle beigebracht, als das Gleiche nur für mich selbst zu bauen.",
+    tags: ["NestJS", "Next.js", "Turborepo", "Prisma", "WhatsApp Cloud API"],
     accent: "#f472b6",
-    status: "LIVE",
-    statusColor: "#34d399",
-  },
-  {
-    num: "03",
-    product: "InvoiceBot",
-    type: "SAAS · PAYMENT AUTOMATION",
-    title: "Automated Invoice Reminder Engine",
-    desc:
-      "SaaS platform that eliminates late payments for freelancers by sending intelligent, multilingual follow-up sequences — so you never have an awkward 'did you see my invoice?' conversation again.",
-    detail:
-      "Flask + PostgreSQL backend hosted on Render. Brevo HTTP API for reliable email delivery. Lemon Squeezy for Starter/Pro billing. Sends reminders in Arabic, French, and English — built specifically for MENA freelancers working with international clients. Live at getinvoicebot.com.",
-    tags: ["Flask", "PostgreSQL", "Brevo", "Lemon Squeezy", "Render", "Python"],
-    accent: "#34d399",
-    status: "LIVE",
-    statusColor: "#34d399",
-    url: "https://getinvoicebot.com",
+    status: "IN ARBEIT",
+    statusColor: "#f59e0b",
   },
 ];
 
-function ProductCard({ product, index }: { product: typeof PRODUCTS[0] & { url?: string }; index: number }) {
+function ProductCard({ product, index }: { product: typeof PRODUCTS[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
@@ -166,25 +152,22 @@ function ProductCard({ product, index }: { product: typeof PRODUCTS[0] & { url?:
           ))}
         </div>
 
-        {/* Expand hint + optional visit link */}
-        <div className="flex items-center justify-between">
+        {/* Expand hint + live link */}
+        <div className="flex items-center justify-between pt-1">
           <span className="font-mono text-[9px] tracking-widest text-ink-600 uppercase">
-            {expanded ? "— less" : "+ details"}
+            {expanded ? "— weniger" : "+ details"}
           </span>
-          {"url" in product && product.url && (
-            
-              href={product.url as string}
+          {"link" in product && product.link && (
+            <a
+              href={product.link}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="font-mono text-[9px] tracking-widest uppercase flex items-center gap-1 transition-colors duration-200"
+              className="font-mono text-[9px] tracking-widest uppercase hover:opacity-80 transition-opacity"
               style={{ color: product.accent }}
               data-hover
             >
-              Visit site
-              <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M2.5 9.5l7-7M4 2.5h5.5V8" />
-              </svg>
+              Live-Seite besuchen →
             </a>
           )}
         </div>
@@ -214,7 +197,7 @@ export default function Projects() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
             >
-              Deployed Systems
+              Projekte
             </motion.p>
             <motion.h2
               className="font-sans font-bold text-ink-100 leading-tight"
@@ -224,9 +207,9 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              Production-grade
+              Was ich gebaut
               <br />
-              <span className="text-ink-400">projects & live systems</span>
+              <span className="text-ink-400">habe und gerade baue</span>
             </motion.h2>
           </div>
           <motion.p
@@ -236,7 +219,7 @@ export default function Projects() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Every project is deployed. Every system handles real users, real data, real workloads.
+            InvoiceBot ist live im Einsatz. AINTORA OS entsteht gerade für einen echten Kunden.
           </motion.p>
         </div>
 
@@ -267,7 +250,7 @@ export default function Projects() {
                 <span className="font-sans font-bold tracking-widest text-sm" style={{ color: "#ec4899" }}>SYSTEMS</span>
               </div>
               <p className="font-mono text-[9px] tracking-[0.25em] text-ink-600 uppercase mt-0.5">
-                Your smartest employee never clocks out
+                Small tools for small businesses, built one client at a time
               </p>
             </div>
           </div>
@@ -275,12 +258,12 @@ export default function Projects() {
           {/* Metrics */}
           <div className="flex items-center gap-5 sm:gap-6">
             <div className="text-center">
-              <span className="font-mono text-xl font-bold text-cyan-DEFAULT block leading-none">3</span>
+              <span className="font-mono text-xl font-bold text-cyan-DEFAULT block leading-none">2</span>
               <span className="font-mono text-[9px] tracking-wide text-ink-600 mt-1 block">Products</span>
             </div>
             <div className="w-px h-8 bg-[rgba(255,255,255,0.06)]" />
             <div className="text-center">
-              <span className="font-mono text-xl font-bold text-emerald-400 block leading-none">2</span>
+              <span className="font-mono text-xl font-bold text-emerald-400 block leading-none">1</span>
               <span className="font-mono text-[9px] tracking-wide text-ink-600 mt-1 block">Live</span>
             </div>
             <div className="w-px h-8 bg-[rgba(255,255,255,0.06)]" />
@@ -297,7 +280,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Product cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
           {PRODUCTS.map((p, i) => (
             <ProductCard key={p.num} product={p} index={i} />
           ))}
@@ -326,7 +309,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          
+          <a
             href="https://github.com/Mohammed18-19"
             target="_blank"
             rel="noopener noreferrer"

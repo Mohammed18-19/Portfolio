@@ -27,7 +27,7 @@ export default function NotFound() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          404 — Page not found
+          404 — Seite nicht gefunden
         </motion.p>
         <motion.h1
           className="font-sans font-bold text-ink-100 mb-4"
@@ -44,9 +44,9 @@ export default function NotFound() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          Route not found in the agent graph.
+          Diese Seite gibt es nicht.
           <br />
-          Redirecting in{" "}
+          Weiterleitung in{" "}
           <span className="text-cyan-DEFAULT">{count}s</span>...
         </motion.p>
         <motion.a
@@ -56,7 +56,7 @@ export default function NotFound() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Back to Home
+          Zurück zur Startseite
         </motion.a>
       </div>
     </div>
