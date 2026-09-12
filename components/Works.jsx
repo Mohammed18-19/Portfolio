@@ -54,7 +54,7 @@ const ProjectCard = ({
             >
               <FaCode className='project-link-icon' aria-hidden='true' />
               <FaExternalLinkAlt className='project-link-arrow' aria-hidden='true' />
-              <span className='project-tooltip'>Open project</span>
+              <span className='project-tooltip'>View contribution</span>
             </a>
           </div>
         </div>

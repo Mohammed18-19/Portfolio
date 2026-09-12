@@ -139,7 +139,7 @@ const projects = [
       { name: "CMake", color: "pink-text-gradient" },
     ],
     image: "/projects/eboot.jpg",
-    source_code_link: "https://github.com/EmbeddedOS/eBoot",
+    source_code_link: "https://github.com/embeddedos-org/eBoot/pull/109",
   },
 ];
 

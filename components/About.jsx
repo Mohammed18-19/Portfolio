@@ -115,8 +115,8 @@ const About = () => {
         >
           <div className="relative w-[200px] h-[200px] md:w-[250px] md:h-[250px]">
             <img
-              src={potrait}
-              alt="Mohammed Aintomar"
+              src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MmI2MDhtb290M2UwYnJycmJtbXJ2NXFsbnR5ODlwNnlqczRtanhmZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VTtANKl0beDFQRLDTh/giphy.gif"
+              alt="Coding animation"
               className="w-full h-full object-cover rounded-full border-4 border-white/10 shadow-card"
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#915eff] to-transparent opacity-30" />

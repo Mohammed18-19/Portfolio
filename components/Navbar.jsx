@@ -94,7 +94,7 @@ const Navbar = () => {
           }}
         >
           <img
-  src="/avatar/male-avatar.jpg"
+  src="/avatar/mohammed-aintomar.jpeg"
   alt="Mohammed Aintomar"
   className="navbar-avatar"
 />
