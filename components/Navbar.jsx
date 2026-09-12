@@ -95,6 +95,7 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='navbar-logo' />
           <p className='navbar-name'>
+            <FaUser className="navbar-name-icon" />
             Mohammed Aintomar
             <span className='navbar-role'>| </span>
           </p>

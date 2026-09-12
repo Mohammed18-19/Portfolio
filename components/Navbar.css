@@ -265,3 +265,11 @@
     font-size: 18px;
   }
 }
+
+.navbar-name-icon {
+  display: inline-block;
+  margin-right: 8px;
+  color: #915eff;
+  font-size: 14px;
+  vertical-align: middle;
+}

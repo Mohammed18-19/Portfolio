@@ -23,6 +23,19 @@ const ProjectCard = ({
         scale={1}
         transitionSpeed={450}
         className='project-card'
+        role="link"
+        tabIndex={0}
+        onClick={(event) => {
+          if (event.target.closest("a")) return;
+          window.open(source_code_link, "_blank", "noopener,noreferrer");
+        }}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            window.open(source_code_link, "_blank", "noopener,noreferrer");
+          }
+        }}
+        style={{ cursor: "pointer" }}
       >
         <div className='project-image-wrap'>
           <img
