@@ -52,11 +52,7 @@ const ProjectCard = ({
               aria-label={`Open ${name} project`}
               className='project-link group'
             >
-              <img
-                src={github}
-                alt=''
-                className='project-link-icon'
-              />
+              <FaCode className='project-link-icon' aria-hidden='true' />
               <FaExternalLinkAlt className='project-link-arrow' aria-hidden='true' />
               <span className='project-tooltip'>Open project</span>
             </a>
