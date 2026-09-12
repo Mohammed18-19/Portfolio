@@ -66,14 +66,14 @@ const services = [
 const technologies = [
   { name: "Python", icon: FaPython, level: "Advanced" },
   { name: "C", icon: FaCuttlefish, level: "Intermediate" },
-  { name: "Flask", icon: FaFlask, level: "Advanced" },
-  { name: "PostgreSQL", icon: FaDatabase, level: "Advanced" },
-  { name: "RAG / LLMs", icon: FaBrain, level: "Advanced" },
+  { name: "Flask", icon: FaFlask, level: "Intermediate" },
+  { name: "PostgreSQL", icon: FaDatabase, level: "Intermediate" },
+  { name: "RAG / LLM Engineering", icon: FaBrain, level: "Intermediate" },
   { name: "pgvector / HNSW", icon: FaProjectDiagram, level: "Intermediate" },
-  { name: "REST APIs", icon: FaServer, level: "Advanced" },
+  { name: "REST APIs", icon: FaServer, level: "Intermediate" },
   { name: "Git / GitHub", icon: FaGithub, level: "Advanced" },
   { name: "Docker", icon: FaDocker, level: "Intermediate" },
-  { name: "Linux", icon: FaLinux, level: "Advanced" },
+  { name: "Linux", icon: FaLinux, level: "Intermediate" },
   { name: "GitHub Actions", icon: FaGitAlt, level: "Intermediate" },
   { name: "CMake", icon: FaTerminal, level: "Intermediate" },
   { name: "Pytest", icon: FaVial, level: "Intermediate" },
@@ -114,8 +114,6 @@ const experiences = [
   },
 ];
 
-const testimonials = [];
-
 const projects = [
   {
     name: "RepoMind",
@@ -147,6 +145,5 @@ export {
   services,
   technologies,
   experiences,
-  testimonials,
   projects,
 };

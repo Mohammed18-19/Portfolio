@@ -54,7 +54,7 @@ const ProjectCard = ({
             >
               <FaCode className='project-link-icon' aria-hidden='true' />
               <FaExternalLinkAlt className='project-link-arrow' aria-hidden='true' />
-              <span className='project-tooltip'>View contribution</span>
+              <span className='project-tooltip'>{name === "RepoMind" ? "View on GitHub" : "View PR"}</span>
             </a>
           </div>
         </div>
@@ -92,11 +92,10 @@ const Works = () => {
 
       <div className='projects-intro'>
         <p>
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          These projects showcase my engineering work across AI systems,
+          backend development, and open-source software. Each project highlights
+          a real technical problem, the technologies involved, and the engineering
+          decisions behind the implementation.
         </p>
       </div>
 

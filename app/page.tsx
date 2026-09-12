@@ -7,7 +7,6 @@ import {
   Experience,
   Tech,
   Works,
-  Feedbacks,
   Contact,
 } from "@/components";
 
@@ -20,7 +19,6 @@ export default function Home() {
       <Experience />
       <Tech />
       <Works />
-      <Feedbacks />
       <Contact />
     </main>
   );

@@ -36,8 +36,8 @@ const Hero = () => {
             viewport={{ once: false, amount: 0.25 }}
             className='hero-subtitle'
           >
-            I develop 3D visuals, user <br className='hero-line-break' />
-            interfaces and web applications
+            I build practical AI systems, backend <br className='hero-line-break' />
+            services and RAG applications
           </motion.p>
 
           <motion.div

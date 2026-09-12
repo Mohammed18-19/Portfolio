@@ -139,7 +139,7 @@ const Navbar = () => {
             onClick={() => setToggle(!toggle)}
           >
             <img
-              src={toggle ? close : menu}
+              src={toggle ? close.src : menu.src}
               alt=''
               className='mobile-menu-icon'
             />
