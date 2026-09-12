@@ -47,13 +47,13 @@ const Hero = () => {
             viewport={{ once: false, amount: 0.25 }}
             className='hero-socials'
           >
-            <a href="#" className="hero-social-link" aria-label='GitHub'>
+            <a href="https://github.com/Mohammed18-19" target="_blank" rel="noreferrer" className="hero-social-link" aria-label="GitHub">
               <FaGithub />
             </a>
-            <a href="#" className="hero-social-link" aria-label='LinkedIn'>
+            <a href="https://www.linkedin.com/in/mohammed-aintomar-a94a37262/" target="_blank" rel="noreferrer" className="hero-social-link" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
-            <a href="#" className="hero-social-link" aria-label='Twitter'>
+            <a href="https://x.com/MohamedAin99598" target="_blank" rel="noreferrer" className="hero-social-link" aria-label="X">
               <FaTwitter />
             </a>
           </motion.div>

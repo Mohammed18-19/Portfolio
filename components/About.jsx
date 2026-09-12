@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import { FaUserGraduate } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -71,11 +71,14 @@ const About = () => {
           and citation-grounded generation.
         </p>
 
-        <h2
-          className={`${styles.sectionHeadText} font-["Oswald"] font-bold uppercase tracking-wider mt-3`}
-        >
-          Overview. <FaUserGraduate className="inline-block" />
-        </h2>
+        <div className="flex items-center gap-4 mt-3">
+          <FaUserCircle className="text-[#915eff] text-[42px]" />
+          <h2
+            className={`${styles.sectionHeadText} font-["Oswald"] font-bold uppercase tracking-wider`}
+          >
+            Overview.
+          </h2>
+        </div>
       </motion.div>
 
       <div className="flex flex-col-reverse gap-10 md:flex-row md:items-center">

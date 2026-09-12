@@ -58,7 +58,7 @@ const ExperienceCard = ({ experience }) => {
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
-          <FaBriefcase className="text-white text-xl" />
+          <FaBriefcase className="text-[#915eff] text-xl" />
         </div>
       }
     >

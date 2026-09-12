@@ -273,3 +273,39 @@
   font-size: 14px;
   vertical-align: middle;
 }
+
+.navbar-name-icon {
+  display: inline-block;
+  margin-right: 8px;
+  color: #915eff;
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+.navbar-logo-symbol {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(145, 94, 255, 0.15);
+  border: 1px solid #915eff;
+  color: #915eff;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.navbar-logo-symbol span {
+  line-height: 1;
+}
+
+.navbar-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #915eff;
+  flex-shrink: 0;
+}

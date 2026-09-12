@@ -93,7 +93,11 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='navbar-logo' />
+          <img
+  src="/avatar/male-avatar.jpg"
+  alt="Mohammed Aintomar"
+  className="navbar-avatar"
+/>
           <p className='navbar-name'>
             <FaUser className="navbar-name-icon" />
             Mohammed Aintomar
