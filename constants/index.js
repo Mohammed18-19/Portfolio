@@ -85,7 +85,8 @@ const experiences = [
     company_name: "Maroc Telecom",
     date: "Aug 2023 - Nov 2023",
     icon: FaServer,
-    iconBg: "#383E56",
+    iconBg: "#ffffff",
+    logo: "/company-maroc-telecom.png",
     image:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80",
     skills: ["IT Support", "Troubleshooting", "Documentation"],
@@ -102,7 +103,7 @@ const experiences = [
     icon: FaMicrochip,
     iconBg: "#383E56",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80",
     skills: ["C", "Security", "Regression Testing", "CMake", "Git"],
     points: [
       "Implemented shared image-slot boundary validation covering image headers, payloads, and TLVs.",
@@ -116,7 +117,7 @@ const experiences = [
 
 const projects = [
   {
-    name: "RepoMind",
+    name: "CodeAtlas",
     description:
       "AI codebase intelligence system using RAG for natural-language search over software repositories. It combines code-aware chunking, embeddings, PostgreSQL + pgvector, hybrid retrieval, reranking, conversation history, and citation-grounded generation.",
     tags: [
@@ -124,8 +125,8 @@ const projects = [
       { name: "RAG / LLM", color: "green-text-gradient" },
       { name: "PostgreSQL", color: "pink-text-gradient" },
     ],
-    image: "/projects/repomind.jpg",
-    source_code_link: "https://github.com/Mohammed18-19/RepoMind",
+    image: "/projects/CodeAtlas-ui-preview.png",
+    source_code_link: "https://github.com/Mohammed18-19/CodeAtlas",
   },
   {
     name: "eBoot Security Contribution",
