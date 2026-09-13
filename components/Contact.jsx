@@ -109,7 +109,7 @@ const Contact = () => {
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4 flex items-center gap-2'><FaUser /> Your Name</span>
+            <span className='text-white font-medium mb-4 flex items-center gap-2'><FaUser /> Enter your name</span>
             <input
               type='text'
               name='name'
@@ -120,18 +120,18 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4 flex items-center gap-2'><MdEmail /> Your email</span>
+            <span className='text-white font-medium mb-4 flex items-center gap-2'><MdEmail /> Enter your email</span>
             <input
               type='email'
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder="Your email address"
+              placeholder="Enter your email address"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4 flex items-center gap-2'><MdPhone /> Phone Number</span>
+            <span className='text-white font-medium mb-4 flex items-center gap-2'><MdPhone /> Enter your phone number</span>
             <PhoneInput
               country={'in'}
               value={form.phone}
@@ -164,7 +164,7 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4 flex items-center gap-2'><MdMessage /> Your Message</span>
+            <span className='text-white font-medium mb-4 flex items-center gap-2'><MdMessage /> Write your message</span>
             <textarea
               rows={7}
               name='message'
