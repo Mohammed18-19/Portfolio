@@ -7,9 +7,7 @@ function isWebGLAvailable() {
     const canvas = document.createElement("canvas");
 
     const gl =
-      canvas.getContext("webgl", {
-        failIfMajorPerformanceCaveat: true,
-      }) ||
+      canvas.getContext("webgl") ||
       canvas.getContext("experimental-webgl");
 
     return !!gl;
@@ -25,7 +23,11 @@ export default function WebGLGuard({ children, fallback = null }) {
     setStatus(isWebGLAvailable() ? "available" : "unavailable");
   }, []);
 
-  if (status !== "available") {
+  if (status === "checking") {
+    return null;
+  }
+
+  if (status === "unavailable") {
     return fallback;
   }
 
