@@ -229,36 +229,57 @@
 }
 
 /* =====================================================
-   3D laptop / desktop hero canvas
+   3D computer hero canvas
    ===================================================== */
 
-.hero-section > .hero-computer-canvas {
-  position: absolute !important;
-  top: 0;
+.hero-computer-wrap {
+  position: absolute;
+  top: 300px;
   right: 0;
-  bottom: 0;
   left: 0;
+  height: calc(100vh - 300px);
   z-index: 1;
+  pointer-events: none;
+}
+
+.hero-computer-wrap .hero-computer-canvas {
+  display: block !important;
   width: 100% !important;
   height: 100% !important;
   pointer-events: none;
 }
 
-.hero-section > .hero-computer-canvas canvas {
+.hero-computer-wrap canvas {
+  display: block;
   width: 100% !important;
   height: 100% !important;
 }
 
-/* Desktop: make sure the 3D laptop has a visible canvas area */
+/* Desktop / laptop */
 @media (min-width: 768px) {
-  .hero-section > .hero-computer-canvas {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  .hero-computer-wrap {
+    top: 310px;
+    height: calc(100vh - 310px);
   }
 }
 
-/* Keep the 3D model behind the hero text */
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-computer-wrap {
+    top: 330px;
+    height: calc(100vh - 330px);
+  }
+}
+
+/* Small phones */
+@media (max-width: 460px) {
+  .hero-computer-wrap {
+    top: 350px;
+    height: calc(100vh - 350px);
+  }
+}
+
+/* Text stays above the 3D model */
 .hero-copy-wrap {
   z-index: 2;
 }

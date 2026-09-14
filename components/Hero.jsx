@@ -60,13 +60,11 @@ const Hero = () => {
         </div>
       </div>
 
-      <WebGLGuard>
-
-
-        <ComputersCanvas />
-
-
-      </WebGLGuard>
+      <div className="hero-computer-wrap" aria-hidden="true">
+        <WebGLGuard>
+          <ComputersCanvas />
+        </WebGLGuard>
+      </div>
 
       <div className='hero-scroll-indicator'>
         <a href='#about'>
