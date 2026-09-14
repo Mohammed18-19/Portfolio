@@ -101,11 +101,13 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop='demand'
+      className="hero-computer-canvas"
+      frameloop="demand"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true, antialias: true }}
+      style={{ width: "100%", height: "100%" }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

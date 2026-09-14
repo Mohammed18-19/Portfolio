@@ -227,3 +227,42 @@
     margin-top: 18px;
   }
 }
+
+/* =====================================================
+   3D laptop / desktop hero canvas
+   ===================================================== */
+
+.hero-section > .hero-computer-canvas {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+}
+
+.hero-section > .hero-computer-canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Desktop: make sure the 3D laptop has a visible canvas area */
+@media (min-width: 768px) {
+  .hero-section > .hero-computer-canvas {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Keep the 3D model behind the hero text */
+.hero-copy-wrap {
+  z-index: 2;
+}
+
+.hero-scroll-indicator {
+  z-index: 3;
+}
