@@ -14,7 +14,43 @@ const levelClassNames = {
   Intermediate: "tech-card--intermediate",
 };
 
+const agenticSkills = [
+  "Function / Tool Calling",
+  "ReAct Agents",
+  "Agent Memory",
+  "Task Decomposition",
+  "LangGraph",
+];
+
+const TechnologyCard = ({ technology, index }) => {
+  const Icon = technology.icon;
+
+  return (
+    <motion.div
+      className={`tech-card ${levelClassNames[technology.level] || ""}`}
+      key={technology.name}
+      variants={fadeIn("up", "spring", 0.08 * index, 0.75)}
+    >
+      <div className="tech-icon-wrap">
+        <Icon className="tech-icon text-[#915eff] text-4xl" />
+      </div>
+
+      <h3 className="tech-name">{technology.name}</h3>
+
+      <span className="tech-level">{technology.level}</span>
+    </motion.div>
+  );
+};
+
 const Tech = () => {
+  const agenticTechnologies = technologies.filter((technology) =>
+    agenticSkills.includes(technology.name)
+  );
+
+  const generalTechnologies = technologies.filter(
+    (technology) => !agenticSkills.includes(technology.name)
+  );
+
   return (
     <>
       <motion.div variants={textVariant()} className="tech-heading">
@@ -32,7 +68,8 @@ const Tech = () => {
           className="tech-description"
         >
           The tools and technologies I use to build AI systems, backend
-          services, retrieval pipelines, and reliable software.
+          services, retrieval pipelines, agentic workflows, and reliable
+          software.
         </motion.p>
 
         <motion.div
@@ -51,26 +88,42 @@ const Tech = () => {
         </motion.div>
       </div>
 
-      <div className="tech-grid">
-        {technologies.map((technology, index) => {
-          const Icon = technology.icon;
+      <div className="tech-agentic">
+        <div className="tech-agentic-heading">
+          <span className="tech-agentic-line" />
+          <h3>Agentic AI</h3>
+          <span className="tech-agentic-line" />
+        </div>
 
-          return (
-            <motion.div
-              className={`tech-card ${levelClassNames[technology.level] || ""}`}
+        <p className="tech-agentic-description">
+          From tool-enabled LLMs to stateful agent workflows and orchestration.
+        </p>
+
+        <div className="tech-grid">
+          {agenticTechnologies.map((technology, index) => (
+            <TechnologyCard
               key={technology.name}
-              variants={fadeIn("up", "spring", 0.08 * index, 0.75)}
-            >
-              <div className="tech-icon-wrap">
-                <Icon className="tech-icon text-[#915eff] text-4xl" />
-              </div>
+              technology={technology}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
 
-              <h3 className="tech-name">{technology.name}</h3>
+      <div className="tech-general-heading">
+        <span className="tech-general-line" />
+        <h3>Technologies & Tools</h3>
+        <span className="tech-general-line" />
+      </div>
 
-              <span className="tech-level">{technology.level}</span>
-            </motion.div>
-          );
-        })}
+      <div className="tech-grid">
+        {generalTechnologies.map((technology, index) => (
+          <TechnologyCard
+            key={technology.name}
+            technology={technology}
+            index={index}
+          />
+        ))}
       </div>
     </>
   );

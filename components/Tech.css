@@ -207,3 +207,79 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* =====================================================
+   Agentic AI grouping
+   ===================================================== */
+
+.tech-agentic {
+  margin-top: 46px;
+}
+
+.tech-agentic-heading,
+.tech-general-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tech-agentic-heading h3,
+.tech-general-heading h3 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tech-agentic-heading h3 {
+  color: #915eff;
+  text-shadow: 0 0 18px rgba(145, 94, 255, 0.28);
+}
+
+.tech-agentic-line,
+.tech-general-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(145, 94, 255, 0.45),
+    transparent
+  );
+}
+
+.tech-agentic-description {
+  max-width: 680px;
+  margin: 10px auto 0;
+  color: #aaa6c3;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.tech-agentic .tech-grid {
+  margin-top: 28px;
+}
+
+.tech-general-heading {
+  margin-top: 58px;
+}
+
+.tech-general-heading h3 {
+  color: #d7d2ec;
+  font-size: 18px;
+}
+
+.tech-general-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.14),
+    transparent
+  );
+}

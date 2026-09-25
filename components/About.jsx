@@ -65,9 +65,12 @@ const About = () => {
         >
           I am a software developer focused on AI/LLM and RAG engineering,
           with a strong foundation in Python backend development, PostgreSQL,
-          REST APIs, and modern software systems. I build practical AI
-          applications such as CodeAtlas, an AI codebase intelligence system
-          using code-aware chunking, embeddings, hybrid retrieval, reranking,
+          REST APIs, and modern software systems. My AI work has progressed
+          from retrieval pipelines into agentic workflows, including function
+          and tool calling, ReAct agents, agent memory, task decomposition,
+          and LangGraph-based orchestration. I build practical AI applications
+          such as CodeAtlas, an AI codebase intelligence system using
+          code-aware chunking, embeddings, hybrid retrieval, reranking,
           and citation-grounded generation.
         </p>
 

@@ -1,4 +1,7 @@
 import {
+  FaTools,
+  FaSyncAlt,
+  FaMemory,
   FaPython,
   FaCuttlefish,
   FaFlask,
@@ -28,11 +31,10 @@ const services = [
   {
     title: "AI / LLM Engineering",
     description:
-      "Building practical AI applications with LLM APIs, embeddings, structured prompts, and grounded generation.",
-    image:
-      "/projects/llm.jpeg",
+      "Building practical AI applications with LLM APIs, RAG pipelines, tool calling, and agentic workflows with memory, task decomposition, and LangGraph.",
+    image: "/projects/llm.jpeg",
     icon: FaBrain,
-    skills: ["Python", "Gemini", "Embeddings"],
+    skills: ["Python", "RAG", "Tool Calling", "LangGraph"],
   },
   {
     title: "Backend Development",
@@ -69,10 +71,10 @@ const technologies = [
   { name: "Flask", icon: FaFlask, level: "Intermediate" },
   { name: "PostgreSQL", icon: FaDatabase, level: "Intermediate" },
   { name: "RAG / LLM Engineering", icon: FaBrain, level: "Intermediate" },
-  { name: "Function / Tool Calling", icon: FaBrain, level: "Intermediate" },
-  { name: "ReAct Agents", icon: FaBrain, level: "Intermediate" },
-  { name: "Agent Memory", icon: FaBrain, level: "Intermediate" },
-  { name: "Task Decomposition", icon: FaBrain, level: "Intermediate" },
+  { name: "Function / Tool Calling", icon: FaTools, level: "Intermediate" },
+  { name: "ReAct Agents", icon: FaSyncAlt, level: "Intermediate" },
+  { name: "Agent Memory", icon: FaMemory, level: "Intermediate" },
+  { name: "Task Decomposition", icon: FaProjectDiagram, level: "Intermediate" },
   { name: "LangGraph", icon: FaProjectDiagram, level: "Intermediate" },
   { name: "pgvector / HNSW", icon: FaProjectDiagram, level: "Intermediate" },
   { name: "REST APIs", icon: FaServer, level: "Intermediate" },
