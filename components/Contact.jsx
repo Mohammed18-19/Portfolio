@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import './Contact.css';
 import { MdContactMail, MdEmail, MdMessage, MdPhone } from 'react-icons/md';
 import { FaUser } from 'react-icons/fa';
@@ -43,6 +44,7 @@ const Contact = () => {
 
     const name = form.name.trim();
     const email = form.email.trim();
+    const phone = form.phone.trim();
     const message = form.message.trim();
 
     if (!name || !email || !message) {
@@ -50,30 +52,45 @@ const Contact = () => {
       return;
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast.error("Email service is not configured. Please try again later.");
+      console.error("Missing EmailJS environment configuration.");
+      return;
+    }
+
     setLoading(true);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          phone: form.phone,
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: name,
+          from_email: email,
+          phone: phone || "Not provided",
           message,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || "Unable to send your message.");
-      }
+        },
+        { publicKey }
+      );
 
       toast.success("Message sent! Thank you for getting in touch.");
       setForm({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
-      toast.error(error.message || "Could not send your message. Please try again.");
+      console.error("EmailJS send error details:", {
+      status: error?.status,
+      text: error?.text,
+      message: error?.message,
+    });
+      toast.error("Could not send your message. Please try again.");
     } finally {
       setLoading(false);
     }
