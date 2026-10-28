@@ -146,6 +146,21 @@ const projects = [
     ],
     image: "/projects/eboot.jpg",
     source_code_link: "https://github.com/embeddedos-org/eBoot/pull/109",
+  },,
+
+  {
+    name: "AgriMarket Intelligence",
+    description:
+      "Agricultural intelligence platform for Morocco combining FAOSTAT production data, NASA POWER climate indicators, forecasting, and evidence-grounded AI investigations.",
+    tags: [
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "LangGraph", color: "green-text-gradient" },
+      { name: "Next.js", color: "pink-text-gradient" },
+      { name: "Flask API", color: "blue-text-gradient" },
+    ],
+    image: "/projects/agrimarket-dashboard.png",
+    source_code_link: "https://github.com/Mohammed18-19/agrimarket-intelligence",
+    live_demo_link: "https://frontend-blush-omega-81.vercel.app/",
   },
 ];
 
