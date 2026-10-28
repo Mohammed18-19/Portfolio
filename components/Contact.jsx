@@ -3,7 +3,6 @@ import './Contact.css';
 import { MdContactMail, MdEmail, MdMessage, MdPhone } from 'react-icons/md';
 import { FaUser } from 'react-icons/fa';
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -37,59 +36,47 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (loading) return;
+
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const message = form.message.trim();
+
+    if (!name || !email || !message) {
+      toast.error("Please fill in your name, email, and message.");
+      return;
+    }
+
     setLoading(true);
 
-    if (!form.name || !form.email || !form.message) {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: form.phone,
+          message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to send your message.");
+      }
+
+      toast.success("Message sent! Thank you for getting in touch.");
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      toast.error(error.message || "Could not send your message. Please try again.");
+    } finally {
       setLoading(false);
-      toast.error('Please fill in all fields.');
-      return;
     }
-
-    const serviceId = "";
-    const templateId = "";
-    const publicKey = "";
-
-    if (!serviceId || !templateId || !publicKey) {
-      setLoading(false);
-      toast.error("Email service not configured. Please check your .env file.");
-      console.error("Missing EmailJS environment variables: ", { serviceId, templateId, publicKey });
-      return;
-    }
-
-    emailjs
-      .send(
-        serviceId,
-        templateId,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "aintomar.mohamed19@gmail.com",
-          message: `${form.message}\n\n---\nPhone: ${form.phone}`,
-        },
-        publicKey
-      )
-      .then(
-        () => {
-          setLoading(false);
-          toast.success("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            phone: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          toast.error("Ahh, something went wrong. Please try again.");
-        }
-      );
   };
 
   return (
